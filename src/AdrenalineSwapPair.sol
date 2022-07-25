@@ -69,6 +69,7 @@ contract AdrenalineSwapPair is ERC20, Math {
         require(!isEntered);
         isEntered = true;
 
+        //execute function code
         _;
 
         isEntered = false;
@@ -92,21 +93,25 @@ contract AdrenalineSwapPair is ERC20, Math {
         uint256 balance0 = IERC20(token0).balanceOf(address(this));
         uint256 balance1 = IERC20(token1).balanceOf(address(this));
         //Amount - difference between total token balance and pool reserves
-        // 2650 - 200 = 2450
-        // 820 - 20 = 800
+        // 2450
+        // 800
         uint256 amount0 = balance0 - reserve0_;
         uint256 amount1 = balance1 - reserve1_;
 
         //Total supply - liquidity pool supply, derived from ERC20
         if (totalSupply == 0) {
-
             //liquidity = sqrt(2450*800)(1960000) - 1000 = 1450
             liquidity = Math.sqrt(amount0 * amount1) - MINIMUM_LIQUIDITY;
             
             //mint minimal liquidity if total token supply is 0
+            //Adds existing total supply to pair
             _mint(address(0), MINIMUM_LIQUIDITY);
         } else {
-            
+            //2450-200=2250
+            //800-100=700
+            //20000 total
+            // 2250*total -> 45000000/200 = 225000
+            //20000 total. 14000000/100 = 140000 - min - liquidity to mint
             liquidity = Math.min(
                 (amount0 * totalSupply) / reserve0_,
                 (amount1 * totalSupply) / reserve1_
@@ -115,7 +120,8 @@ contract AdrenalineSwapPair is ERC20, Math {
 
         if (liquidity <= 0) revert InsufficientLiquidityMinted();
 
-        //Initial mint will be
+        //Initial mint will be 1000+1450
+        //Mints liquidity to specific address
         _mint(to, liquidity);
 
         _update(balance0, balance1, reserve0_, reserve1_);
@@ -127,10 +133,14 @@ contract AdrenalineSwapPair is ERC20, Math {
         public
         returns (uint256 amount0, uint256 amount1)
     {
+
         uint256 balance0 = IERC20(token0).balanceOf(address(this));
         uint256 balance1 = IERC20(token1).balanceOf(address(this));
         uint256 liquidity = balanceOf[address(this)];
 
+        //Amount to burn
+        //total - 20000
+        //liquidity - 1000
         amount0 = (liquidity * balance0) / totalSupply;
         amount1 = (liquidity * balance1) / totalSupply;
 
@@ -235,6 +245,7 @@ contract AdrenalineSwapPair is ERC20, Math {
         uint112 reserve0_,
         uint112 reserve1_
     ) private {
+        //Overflow security
         if (balance0 > type(uint112).max || balance1 > type(uint112).max)
             revert BalanceOverflow();
 
