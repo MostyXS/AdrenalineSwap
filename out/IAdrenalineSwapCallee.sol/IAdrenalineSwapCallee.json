@@ -1,0 +1,231 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount0Out",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount1Out",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "AdrenalineSwapCall",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "AdrenalineSwapCall(address,uint256,uint256,bytes)": "800ced76"
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/IAdrenalineSwapCallee.sol",
+    "id": 23902,
+    "exportedSymbols": {
+      "IAdrenalineSwapCallee": [
+        23901
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "38:227:11",
+    "nodes": [
+      {
+        "id": 23889,
+        "nodeType": "PragmaDirective",
+        "src": "38:32:11",
+        "literals": [
+          "solidity",
+          ">=",
+          "0.7",
+          ".0",
+          "<=",
+          "0.9",
+          ".0"
+        ]
+      },
+      {
+        "id": 23901,
+        "nodeType": "ContractDefinition",
+        "src": "72:192:11",
+        "nodes": [
+          {
+            "id": 23900,
+            "nodeType": "FunctionDefinition",
+            "src": "110:152:11",
+            "functionSelector": "800ced76",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "AdrenalineSwapCall",
+            "nameLocation": "119:18:11",
+            "parameters": {
+              "id": 23898,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23891,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "155:6:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23900,
+                  "src": "147:14:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 23890,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "147:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 23893,
+                  "mutability": "mutable",
+                  "name": "amount0Out",
+                  "nameLocation": "179:10:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23900,
+                  "src": "171:18:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 23892,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "171:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 23895,
+                  "mutability": "mutable",
+                  "name": "amount1Out",
+                  "nameLocation": "207:10:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23900,
+                  "src": "199:18:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 23894,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "199:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 23897,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "242:4:11",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23900,
+                  "src": "227:19:11",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 23896,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "227:5:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "137:115:11"
+            },
+            "returnParameters": {
+              "id": 23899,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "261:0:11"
+            },
+            "scope": 23901,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IAdrenalineSwapCallee",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          23901
+        ],
+        "name": "IAdrenalineSwapCallee",
+        "nameLocation": "82:21:11",
+        "scope": 23902,
+        "usedErrors": []
+      }
+    ],
+    "license": "Unlicense"
+  },
+  "id": 11
+}

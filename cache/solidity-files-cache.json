@@ -1,0 +1,990 @@
+{
+  "_format": "ethers-rs-sol-cache-3",
+  "paths": {
+    "artifacts": "out",
+    "build_infos": "out/build-info",
+    "sources": "src",
+    "tests": "test",
+    "scripts": "script",
+    "libraries": [
+      "lib"
+    ]
+  },
+  "files": {
+    "lib/forge-std/src/Script.sol": {
+      "lastModificationDate": 1658472277264,
+      "contentHash": "b313d0193442f5a12848be9c422a0064",
+      "sourceName": "lib/forge-std/src/Script.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol"
+      ],
+      "versionRequirement": ">=0.6.0, <0.9.0",
+      "artifacts": {
+        "Script": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Script.sol/Script.json"
+        }
+      }
+    },
+    "lib/forge-std/src/Test.sol": {
+      "lastModificationDate": 1658472277264,
+      "contentHash": "1759d8269e5e14639f70a8b52dcee716",
+      "sourceName": "lib/forge-std/src/Test.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/solmate/lib/ds-test/src/test.sol"
+      ],
+      "versionRequirement": ">=0.6.0, <0.9.0",
+      "artifacts": {
+        "Test": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Test.sol/Test.json"
+        },
+        "stdError": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Test.sol/stdError.json"
+        },
+        "stdMath": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Test.sol/stdMath.json"
+        },
+        "stdStorage": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Test.sol/stdStorage.json"
+        }
+      }
+    },
+    "lib/forge-std/src/Vm.sol": {
+      "lastModificationDate": 1658472277264,
+      "contentHash": "8eb0bacb50669fafb4a48134fc93ed36",
+      "sourceName": "lib/forge-std/src/Vm.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.6.0, <0.9.0",
+      "artifacts": {
+        "Vm": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Vm.sol/Vm.json"
+        }
+      }
+    },
+    "lib/forge-std/src/console.sol": {
+      "lastModificationDate": 1658472277264,
+      "contentHash": "100b8a33b917da1147740d7ab8b0ded3",
+      "sourceName": "lib/forge-std/src/console.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.4.22, <0.9.0",
+      "artifacts": {
+        "console": {
+          "0.8.10+commit.fc410830.Linux.gcc": "console.sol/console.json"
+        }
+      }
+    },
+    "lib/forge-std/src/console2.sol": {
+      "lastModificationDate": 1658472277264,
+      "contentHash": "5df91f8e93efbfcccf68973dc1b74a70",
+      "sourceName": "lib/forge-std/src/console2.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.4.22, <0.9.0",
+      "artifacts": {
+        "console2": {
+          "0.8.10+commit.fc410830.Linux.gcc": "console2.sol/console2.json"
+        }
+      }
+    },
+    "lib/solmate/lib/ds-test/src/test.sol": {
+      "lastModificationDate": 1658472259204,
+      "contentHash": "962996f0e05d5218857a538a62d7c47e",
+      "sourceName": "lib/solmate/lib/ds-test/src/test.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "DSTest": {
+          "0.8.10+commit.fc410830.Linux.gcc": "test.sol/DSTest.json"
+        }
+      }
+    },
+    "lib/solmate/src/tokens/ERC20.sol": {
+      "lastModificationDate": 1658472258448,
+      "contentHash": "0c7c7ada139062536af09d69d96d395c",
+      "sourceName": "lib/solmate/src/tokens/ERC20.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.8.0",
+      "artifacts": {
+        "ERC20": {
+          "0.8.10+commit.fc410830.Linux.gcc": "ERC20.sol/ERC20.json"
+        }
+      }
+    },
+    "src/AdrenalineSwapFactory.sol": {
+      "lastModificationDate": 1658646011635,
+      "contentHash": "a30db30f10cfe9a0b91eda23e967559d",
+      "sourceName": "src/AdrenalineSwapFactory.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/solmate/src/tokens/ERC20.sol",
+        "src/AdrenalineSwapPair.sol",
+        "src/interfaces/IAdrenalineSwapCallee.sol",
+        "src/interfaces/IAdrenalineSwapPair.sol",
+        "src/libraries/Math.sol",
+        "src/libraries/UQ112x112.sol"
+      ],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "AdrenalineSwapFactory": {
+          "0.8.10+commit.fc410830.Linux.gcc": "AdrenalineSwapFactory.sol/AdrenalineSwapFactory.json"
+        }
+      }
+    },
+    "src/AdrenalineSwapLibrary.sol": {
+      "lastModificationDate": 1658471508670,
+      "contentHash": "c5006f98d49719eed936c62789fb482b",
+      "sourceName": "src/AdrenalineSwapLibrary.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/solmate/src/tokens/ERC20.sol",
+        "src/AdrenalineSwapPair.sol",
+        "src/interfaces/IAdrenalineSwapCallee.sol",
+        "src/interfaces/IAdrenalineSwapFactory.sol",
+        "src/interfaces/IAdrenalineSwapPair.sol",
+        "src/libraries/Math.sol",
+        "src/libraries/UQ112x112.sol"
+      ],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "AdrenalineSwapLibrary": {
+          "0.8.10+commit.fc410830.Linux.gcc": "AdrenalineSwapLibrary.sol/AdrenalineSwapLibrary.json"
+        }
+      }
+    },
+    "src/AdrenalineSwapPair.sol": {
+      "lastModificationDate": 1658501938422,
+      "contentHash": "b9282abcf8023b8a7d2d3f140aeaca40",
+      "sourceName": "src/AdrenalineSwapPair.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/solmate/src/tokens/ERC20.sol",
+        "src/interfaces/IAdrenalineSwapCallee.sol",
+        "src/libraries/Math.sol",
+        "src/libraries/UQ112x112.sol"
+      ],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "AdrenalineSwapPair": {
+          "0.8.10+commit.fc410830.Linux.gcc": "AdrenalineSwapPair.sol/AdrenalineSwapPair.json"
+        },
+        "IERC20": {
+          "0.8.10+commit.fc410830.Linux.gcc": "AdrenalineSwapPair.sol/IERC20.json"
+        }
+      }
+    },
+    "src/AdrenalineSwapRouter.sol": {
+      "lastModificationDate": 1658471508663,
+      "contentHash": "e82d639899512620a98ebfbf03b3a872",
+      "sourceName": "src/AdrenalineSwapRouter.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/solmate/src/tokens/ERC20.sol",
+        "src/AdrenalineSwapLibrary.sol",
+        "src/AdrenalineSwapPair.sol",
+        "src/interfaces/IAdrenalineSwapCallee.sol",
+        "src/interfaces/IAdrenalineSwapFactory.sol",
+        "src/interfaces/IAdrenalineSwapPair.sol",
+        "src/libraries/Math.sol",
+        "src/libraries/UQ112x112.sol"
+      ],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "AdrenalineSwapRouter": {
+          "0.8.10+commit.fc410830.Linux.gcc": "AdrenalineSwapRouter.sol/AdrenalineSwapRouter.json"
+        }
+      }
+    },
+    "src/interfaces/IAdrenalineSwapCallee.sol": {
+      "lastModificationDate": 1658471508670,
+      "contentHash": "2a2a44a0f7f4735728f76c1ef034f45a",
+      "sourceName": "src/interfaces/IAdrenalineSwapCallee.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "IAdrenalineSwapCallee": {
+          "0.8.10+commit.fc410830.Linux.gcc": "IAdrenalineSwapCallee.sol/IAdrenalineSwapCallee.json"
+        }
+      }
+    },
+    "src/interfaces/IAdrenalineSwapFactory.sol": {
+      "lastModificationDate": 1658471508669,
+      "contentHash": "ccaa3235c1502f9e95677a802f3948ff",
+      "sourceName": "src/interfaces/IAdrenalineSwapFactory.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "IAdrenalineSwapFactory": {
+          "0.8.10+commit.fc410830.Linux.gcc": "IAdrenalineSwapFactory.sol/IAdrenalineSwapFactory.json"
+        }
+      }
+    },
+    "src/interfaces/IAdrenalineSwapPair.sol": {
+      "lastModificationDate": 1658471508669,
+      "contentHash": "564ed9970add05a08afe7e4439bfaa89",
+      "sourceName": "src/interfaces/IAdrenalineSwapPair.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "IAdrenalineSwapPair": {
+          "0.8.10+commit.fc410830.Linux.gcc": "IAdrenalineSwapPair.sol/IAdrenalineSwapPair.json"
+        }
+      }
+    },
+    "src/libraries/Math.sol": {
+      "lastModificationDate": 1658471285019,
+      "contentHash": "74b860ba6d0e4e423d7e1a2f1c1f1416",
+      "sourceName": "src/libraries/Math.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "Math": {
+          "0.8.10+commit.fc410830.Linux.gcc": "Math.sol/Math.json"
+        }
+      }
+    },
+    "src/libraries/UQ112x112.sol": {
+      "lastModificationDate": 1658471285010,
+      "contentHash": "40536efe0e01a47d3991fc3a6fc5a542",
+      "sourceName": "src/libraries/UQ112x112.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "UQ112x112": {
+          "0.8.10+commit.fc410830.Linux.gcc": "UQ112x112.sol/UQ112x112.json"
+        }
+      }
+    },
+    "test/HelloWorld.t.sol": {
+      "lastModificationDate": 1658646221502,
+      "contentHash": "70bdcb4b118ec21b92ece0942b3f173b",
+      "sourceName": "test/HelloWorld.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/solmate/lib/ds-test/src/test.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "src/AdrenalineSwapFactory.sol",
+        "src/AdrenalineSwapPair.sol",
+        "src/interfaces/IAdrenalineSwapCallee.sol",
+        "src/interfaces/IAdrenalineSwapPair.sol",
+        "src/libraries/Math.sol",
+        "src/libraries/UQ112x112.sol",
+        "test/mocks/ERC20Mintable.sol"
+      ],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "HelloWorldTest": {
+          "0.8.10+commit.fc410830.Linux.gcc": "HelloWorld.t.sol/HelloWorldTest.json"
+        }
+      }
+    },
+    "test/ZuniswapV2Factory.t.sol": {
+      "lastModificationDate": 1658471508670,
+      "contentHash": "9cbff4013c338da3a60f98f4547044da",
+      "sourceName": "test/ZuniswapV2Factory.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/solmate/lib/ds-test/src/test.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "src/AdrenalineSwapFactory.sol",
+        "src/AdrenalineSwapPair.sol",
+        "src/interfaces/IAdrenalineSwapCallee.sol",
+        "src/interfaces/IAdrenalineSwapPair.sol",
+        "src/libraries/Math.sol",
+        "src/libraries/UQ112x112.sol",
+        "test/mocks/ERC20Mintable.sol"
+      ],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "AdrenalineSwapFactoryTest": {
+          "0.8.10+commit.fc410830.Linux.gcc": "ZuniswapV2Factory.t.sol/AdrenalineSwapFactoryTest.json"
+        }
+      }
+    },
+    "test/ZuniswapV2Library.t.sol": {
+      "lastModificationDate": 1658504725215,
+      "contentHash": "e3ff6f5e035d0a92acbb5fb996468080",
+      "sourceName": "test/ZuniswapV2Library.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/solmate/lib/ds-test/src/test.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "src/AdrenalineSwapFactory.sol",
+        "src/AdrenalineSwapLibrary.sol",
+        "src/AdrenalineSwapPair.sol",
+        "src/interfaces/IAdrenalineSwapCallee.sol",
+        "src/interfaces/IAdrenalineSwapFactory.sol",
+        "src/interfaces/IAdrenalineSwapPair.sol",
+        "src/libraries/Math.sol",
+        "src/libraries/UQ112x112.sol",
+        "test/mocks/ERC20Mintable.sol"
+      ],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "AdrenalineSwapLibraryTest": {
+          "0.8.10+commit.fc410830.Linux.gcc": "ZuniswapV2Library.t.sol/AdrenalineSwapLibraryTest.json"
+        }
+      }
+    },
+    "test/ZuniswapV2Pair.t.sol": {
+      "lastModificationDate": 1658512331688,
+      "contentHash": "fb3a47da7ee2f2f96695664c003357be",
+      "sourceName": "test/ZuniswapV2Pair.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/solmate/lib/ds-test/src/test.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "src/AdrenalineSwapFactory.sol",
+        "src/AdrenalineSwapPair.sol",
+        "src/interfaces/IAdrenalineSwapCallee.sol",
+        "src/interfaces/IAdrenalineSwapPair.sol",
+        "src/libraries/Math.sol",
+        "src/libraries/UQ112x112.sol",
+        "test/mocks/ERC20Mintable.sol"
+      ],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "AdrenalineSwapPairTest": {
+          "0.8.10+commit.fc410830.Linux.gcc": "ZuniswapV2Pair.t.sol/AdrenalineSwapPairTest.json"
+        },
+        "Flashloaner": {
+          "0.8.10+commit.fc410830.Linux.gcc": "ZuniswapV2Pair.t.sol/Flashloaner.json"
+        },
+        "TestUser": {
+          "0.8.10+commit.fc410830.Linux.gcc": "ZuniswapV2Pair.t.sol/TestUser.json"
+        }
+      }
+    },
+    "test/ZuniswapV2Router.t.sol": {
+      "lastModificationDate": 1658501961301,
+      "contentHash": "c210b170f0fc4e24341a41a456c73df9",
+      "sourceName": "test/ZuniswapV2Router.t.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/Test.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/solmate/lib/ds-test/src/test.sol",
+        "lib/solmate/src/tokens/ERC20.sol",
+        "src/AdrenalineSwapFactory.sol",
+        "src/AdrenalineSwapLibrary.sol",
+        "src/AdrenalineSwapPair.sol",
+        "src/AdrenalineSwapRouter.sol",
+        "src/interfaces/IAdrenalineSwapCallee.sol",
+        "src/interfaces/IAdrenalineSwapFactory.sol",
+        "src/interfaces/IAdrenalineSwapPair.sol",
+        "src/libraries/Math.sol",
+        "src/libraries/UQ112x112.sol",
+        "test/mocks/ERC20Mintable.sol"
+      ],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "AdrenalineSwapRouterTest": {
+          "0.8.10+commit.fc410830.Linux.gcc": "ZuniswapV2Router.t.sol/AdrenalineSwapRouterTest.json"
+        }
+      }
+    },
+    "test/mocks/ERC20Mintable.sol": {
+      "lastModificationDate": 1658471285007,
+      "contentHash": "805cb1773cd90d42da14312994e27c8c",
+      "sourceName": "test/mocks/ERC20Mintable.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "bytecodeHash": "ipfs"
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ]
+            }
+          },
+          "evmVersion": "london",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/solmate/src/tokens/ERC20.sol"
+      ],
+      "versionRequirement": ">=0.7.0, <=0.9.0",
+      "artifacts": {
+        "ERC20Mintable": {
+          "0.8.10+commit.fc410830.Linux.gcc": "ERC20Mintable.sol/ERC20Mintable.json"
+        }
+      }
+    }
+  }
+}
