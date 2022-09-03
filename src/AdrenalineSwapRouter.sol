@@ -12,17 +12,23 @@ contract AdrenalineSwapRouter {
     error InsufficientOutputAmount();
     error SafeTransferFailed();
 
+    //Factory interface
     IAdrenalineSwapFactory factory;
 
+    
     constructor(address factoryAddress) {
+        //Find factory address
         factory = IAdrenalineSwapFactory(factoryAddress);
     }
 
     function addLiquidity(
+        //Tokens to add
         address tokenA,
         address tokenB,
+        //Desired liquidity to add
         uint256 amountADesired,
         uint256 amountBDesired,
+        //Minimum liquidity to add
         uint256 amountAMin,
         uint256 amountBMin,
         address to
@@ -34,10 +40,11 @@ contract AdrenalineSwapRouter {
             uint256 liquidity
         )
     {
+        //Create if pair does not exist
         if (factory.pairs(tokenA, tokenB) == address(0)) {
             factory.createPair(tokenA, tokenB);
         }
-
+        
         (amountA, amountB) = _calculateLiquidity(
             tokenA,
             tokenB,
@@ -132,6 +139,7 @@ contract AdrenalineSwapRouter {
         address to_
     ) internal {
         for (uint256 i; i < path.length - 1; i++) {
+            
             (address input, address output) = (path[i], path[i + 1]);
             (address token0, ) = AdrenalineSwapLibrary.sortTokens(input, output);
             uint256 amountOut = amounts[i + 1];
@@ -150,7 +158,7 @@ contract AdrenalineSwapRouter {
             ).swap(amount0Out, amount1Out, to, "");
         }
     }
-
+    //Calculate how much liquidity to add based on input
     function _calculateLiquidity(
         address tokenA,
         address tokenB,
@@ -159,6 +167,7 @@ contract AdrenalineSwapRouter {
         uint256 amountAMin,
         uint256 amountBMin
     ) internal returns (uint256 amountA, uint256 amountB) {
+        //Get current token reserves
         (uint256 reserveA, uint256 reserveB) = AdrenalineSwapLibrary.getReserves(
             address(factory),
             tokenA,
@@ -166,14 +175,19 @@ contract AdrenalineSwapRouter {
         );
 
         if (reserveA == 0 && reserveB == 0) {
+            //If reserves are empty we are assigning desired liquidity
             (amountA, amountB) = (amountADesired, amountBDesired);
         } else {
+
+            //Calculate proper B liquidity based on provided A liquidity
             uint256 amountBOptimal = AdrenalineSwapLibrary.quote(
                 amountADesired,
                 reserveA,
                 reserveB
             );
+            //If we want to add inproportional liquidity we will revert the transaction
             if (amountBOptimal <= amountBDesired) {
+                
                 if (amountBOptimal <= amountBMin) revert InsufficientBAmount();
                 (amountA, amountB) = (amountADesired, amountBOptimal);
             } else {

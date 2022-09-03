@@ -22,7 +22,7 @@ error InsufficientOutputAmount();
 error InvalidK();
 error TransferFailed();
 
-//Pair is implemented as another token, totalSupply - liquidity pool supply, mint, burn - addLiquidity and remove liquidity
+//Pair is two tokens liquidity pool implemented as another ERC20-type token, totalSupply - liquidity pool supply, mint, burn - addLiquidity and remove liquidity
 contract AdrenalineSwapPair is ERC20, Math {
     //7bit standart represantation
     using UQ112x112 for uint224;
@@ -88,6 +88,8 @@ contract AdrenalineSwapPair is ERC20, Math {
     }
 
     //Same as add liquidity
+    //Receives liquidity tokens and
+    //Transfer -> transferred tokens calculation -> liquidity to mint calculation -> 
     function mint(address to) public returns (uint256 liquidity) {
         (uint112 reserve0_, uint112 reserve1_, ) = getReserves();
         uint256 balance0 = IERC20(token0).balanceOf(address(this));
@@ -95,6 +97,7 @@ contract AdrenalineSwapPair is ERC20, Math {
         //Amount - difference between total token balance and pool reserves
         // 2450
         // 800
+        //Calculate difference between new balance and total token reserves, how much liquidity is being minted
         uint256 amount0 = balance0 - reserve0_;
         uint256 amount1 = balance1 - reserve1_;
 
@@ -104,7 +107,7 @@ contract AdrenalineSwapPair is ERC20, Math {
             liquidity = Math.sqrt(amount0 * amount1) - MINIMUM_LIQUIDITY;
             
             //mint minimal liquidity if total token supply is 0
-            //Adds existing total supply to pair
+            //Adds existing total supply to pair, 
             _mint(address(0), MINIMUM_LIQUIDITY);
         } else {
             //2450-200=2250
@@ -121,13 +124,15 @@ contract AdrenalineSwapPair is ERC20, Math {
         if (liquidity <= 0) revert InsufficientLiquidityMinted();
 
         //Initial mint will be 1000+1450
-        //Mints liquidity to specific address
+
+        //Increases total supply of liquidity and adds them to balance of specific address
         _mint(to, liquidity);
 
         _update(balance0, balance1, reserve0_, reserve1_);
 
         emit Mint(to, amount0, amount1);
     }
+    //Mint - 
     //Same as remove liquidity
     function burn(address to)
         public
@@ -136,18 +141,19 @@ contract AdrenalineSwapPair is ERC20, Math {
 
         uint256 balance0 = IERC20(token0).balanceOf(address(this));
         uint256 balance1 = IERC20(token1).balanceOf(address(this));
+        //liquidity minted on current address
         uint256 liquidity = balanceOf[address(this)];
 
-        //Amount to burn
-        //total - 20000
-        //liquidity - 1000
+        
+        //Calculate burn amount based on current address balance
         amount0 = (liquidity * balance0) / totalSupply;
         amount1 = (liquidity * balance1) / totalSupply;
 
         if (amount0 == 0 || amount1 == 0) revert InsufficientLiquidityBurned();
 
+        //Burns liquidity supply
         _burn(address(this), liquidity);
-
+        //after transfer tokens to burn address
         _safeTransfer(token0, to, amount0);
         _safeTransfer(token1, to, amount1);
 
@@ -166,6 +172,7 @@ contract AdrenalineSwapPair is ERC20, Math {
         address to,
         bytes calldata data
     ) public nonReentrant {
+        //
         if (amount0Out == 0 && amount1Out == 0)
             revert InsufficientOutputAmount();
 
@@ -238,7 +245,7 @@ contract AdrenalineSwapPair is ERC20, Math {
     //  PRIVATE
     //
     //
-    //
+    //updates cumulative prices and reserves
     function _update(
         uint256 balance0,
         uint256 balance1,
@@ -249,6 +256,7 @@ contract AdrenalineSwapPair is ERC20, Math {
         if (balance0 > type(uint112).max || balance1 > type(uint112).max)
             revert BalanceOverflow();
 
+        //Unchecked is for gas saving purposes
         unchecked {
             uint32 timeElapsed = uint32(block.timestamp) - blockTimestampLast;
 

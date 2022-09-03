@@ -10,31 +10,43 @@ library AdrenalineSwapLibrary {
     error InsufficientLiquidity();
     error InvalidPath();
 
+    //Returns the remaining reserves of pool
     function getReserves(
         address factoryAddress,
         address tokenA,
         address tokenB
     ) public returns (uint256 reserveA, uint256 reserveB) {
+        //Sorting
         (address token0, address token1) = sortTokens(tokenA, tokenB);
+        //Get reserves from pair
         (uint256 reserve0, uint256 reserve1, ) = IAdrenalineSwapPair(
             pairFor(factoryAddress, token0, token1)
         ).getReserves();
+        //Token0 - ADR(100), Token1 - ZAL(1000)
+        //TokenA = ZAL, tokenB = ADR
+        //Protects us from wrong token order
         (reserveA, reserveB) = tokenA == token0
             ? (reserve0, reserve1)
+            //ADR, ZAL
             : (reserve1, reserve0);
     }
 
+    //calculate basic amountOut without fees and etc 
+    //quote
     function quote(
         uint256 amountIn,
         uint256 reserveIn,
         uint256 reserveOut
     ) public pure returns (uint256 amountOut) {
+        //If amount is zero we have nothing to quote
         if (amountIn == 0) revert InsufficientAmount();
+        //If we have no reserves we can't quote amount out
         if (reserveIn == 0 || reserveOut == 0) revert InsufficientLiquidity();
-
+        //Example (150*200)/1000 = 30, calculated amountOut based on tokens in, math proportion
         return (amountIn * reserveOut) / reserveIn;
     }
 
+    //Sorting tokens addresses
     function sortTokens(address tokenA, address tokenB)
         internal
         pure
@@ -43,6 +55,7 @@ library AdrenalineSwapLibrary {
         return tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
     }
 
+    //Gets pair address by factory and token by finding memory offset 
     function pairFor(
         address factoryAddress,
         address tokenA,
@@ -73,6 +86,7 @@ library AdrenalineSwapLibrary {
         if (amountIn == 0) revert InsufficientAmount();
         if (reserveIn == 0 || reserveOut == 0) revert InsufficientLiquidity();
 
+        //Fee is 0.03%
         uint256 amountInWithFee = amountIn * 997;
         uint256 numerator = amountInWithFee * reserveOut;
         uint256 denominator = (reserveIn * 1000) + amountInWithFee;
@@ -110,7 +124,7 @@ library AdrenalineSwapLibrary {
         if (reserveIn == 0 || reserveOut == 0) revert InsufficientLiquidity();
 
         uint256 numerator = reserveIn * amountOut * 1000;
-        uint256 denominator = (reserveOut - amountOut) * 997;
+        uint256 denominator = (reserveOut - amountOut) * 990;
 
         return (numerator / denominator) + 1;
     }
